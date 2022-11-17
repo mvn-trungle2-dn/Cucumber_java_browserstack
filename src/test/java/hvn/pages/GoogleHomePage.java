@@ -1,16 +1,26 @@
 package hvn.pages;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import webui.WebDriverManager;
 import webui.pages.BasePage;
 
+import java.net.URL;
 import java.util.List;
 
 public class GoogleHomePage extends BasePage {
-    public GoogleHomePage() {
-        super();
-    }
+
+
+    private RemoteWebDriver webDriver;
+//
+//    private String selectedProductName;
+//
+//    public GoogleHomePage(WebDriver webDriver) {
+//        this.webDriver = (RemoteWebDriver) webDriver;
+//        this.selectedProductName = "";
+//    }
 
     @FindBy(name = "q")
     private WebElement searchTextbox;
@@ -20,6 +30,11 @@ public class GoogleHomePage extends BasePage {
 
     @FindBy(css = "#search a h3")
     private List<WebElement> searchResultList;
+
+    @Override
+    public WebDriver getDriver(WebDriver driver) {
+        return driver;
+    }
 
     public void navigateTo(String url) {
         WebDriverManager.loadUrl(url);
@@ -43,7 +58,4 @@ public class GoogleHomePage extends BasePage {
         return getText(searchResultList.get(index - 1), "Unable to get result").trim();
     }
 
-    // public void clickOnLink(){
-
-    // }
 }

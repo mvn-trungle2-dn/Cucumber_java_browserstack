@@ -3,6 +3,7 @@ package webui.pages;
 import common.Constants;
 import common.utils.helpers.*;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,7 +17,10 @@ import java.util.List;
 import java.util.Random;
 
 
-public class BasePage {
+public abstract class BasePage {
+
+     public abstract WebDriver getDriver(WebDriver driver) ;
+
     public BasePage() {
         this.initializePageElements();
     }

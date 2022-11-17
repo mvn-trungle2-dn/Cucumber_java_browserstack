@@ -1,18 +1,18 @@
 @Smoke
-Feature: Going to https://www.hitachivantara.com/ through Google search
+Feature: Going to https://monstar-lab.com/vn/ through Google search
 
-  # An example for PASSED cased
+
   @TC_01
-  Scenario: Verify that the user can open hitachivantara.com through Google search
+  Scenario: Verify that the user can search browserstack through Google search
     Given I'm on the Google search
-    When I enter "Hitachi Vantara com" into search text box
+    When I enter "browserstack" into search text box
     And I click Search button
-    Then I verify that "Hitachi Vantara" site is at the first in search result
+    Then I verify that "BrowserStack" site is at the first in search result
 
-  # An example for FAILED cased
+
   @TC_02
-  Scenario: Verify that the user can open hitachivantara.com through Google search
+  Scenario: Verify that the user can open https://monstar-lab.com/vn/ through Google search
     Given I'm on the Google search
-    When I enter "Global Cybersoft" into search text box
+    When I enter "monstar lab" into search text box
     And I click Search button
-    Then I verify that "Hitachi Vantara" site is at the first in search result
+    Then I verify that "Monstar Lab" site is at the first in search result
